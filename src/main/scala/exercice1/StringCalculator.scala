@@ -1,3 +1,7 @@
 package exercice1
 
-object StringCalculator {}
+object StringCalculator {
+
+  def add(input: String): Int = 0
+
+}

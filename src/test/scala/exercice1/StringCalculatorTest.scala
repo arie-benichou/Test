@@ -9,8 +9,8 @@ class StringCalculatorTest extends FunSpec {
 
   describe("[StringCalculator]") {
 
-    it("should fail") {
-      assert(false)
+    it("should return 0 for an empty string") {
+      assert(StringCalculator.add("") === 0)
     }
 
   }

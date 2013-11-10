@@ -33,6 +33,10 @@ class StringCalculatorTest extends FunSpec {
       assert(StringCalculator.add("1,2,3,4") === 10)
     }
 
+    it("should handle new lines between numbers ") {
+      assert(StringCalculator.add("1\n2,3") === StringCalculator.add("1,2,3"))
+    }
+
   }
 
 }

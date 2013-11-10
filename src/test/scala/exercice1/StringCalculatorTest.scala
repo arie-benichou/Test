@@ -21,6 +21,10 @@ class StringCalculatorTest extends FunSpec {
       assert(StringCalculator.add("2") === 2)
     }
 
+    it("should return 3 for \"1,2\"") {
+      assert(StringCalculator.add("1,2") === 3)
+    }
+
   }
 
 }

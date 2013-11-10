@@ -10,6 +10,6 @@ $ cd string-calculator/
 
 $ sbt test
 
-you can generate eclipse artefact this way:
+you can generate eclipse artefacts this way:
 
 $ sbt eclipse

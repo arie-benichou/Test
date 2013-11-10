@@ -25,6 +25,14 @@ class StringCalculatorTest extends FunSpec {
       assert(StringCalculator.add("1,2") === 3)
     }
 
+    it("should return 6 for \"1,2,3\"") {
+      assert(StringCalculator.add("1,2,3") === 6)
+    }
+
+    it("should handle an unknown amount of numbers") {
+      assert(StringCalculator.add("1,2,3,4") === 10)
+    }
+
   }
 
 }

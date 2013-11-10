@@ -2,8 +2,24 @@ package exercice1
 
 object StringCalculator {
 
-  private def addOne(input: String): Int = if (input.isEmpty) 0 else Integer.parseInt(input)
+  val pattern = "(?s)^//(.+?)\n(.*)".r
 
-  def add(input: String): Int = input.split(",|\n").foldLeft(0)((sum, number) => sum + addOne(number))
+  private def parse(input: String) = {
+    input match {
+      case pattern(head, tail) => (head, tail)
+      case _                   => (",", input)
+    }
+  }
+
+  private def parseInt(input: String): Int = if (input.isEmpty) 0 else Integer.parseInt(input)
+
+  def add(input: String): Int = {
+    val (head, tail) = parse(input)
+    val parts = tail.split(head + "|\n")
+    val integers = parts.map(parseInt)
+    val negatives = integers.filter(_ < 0)
+    if (negatives.isEmpty) integers.sum
+    else error("negatives not allowed: " + negatives.mkString(","))
+  }
 
 }

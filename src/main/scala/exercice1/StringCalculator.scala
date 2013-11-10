@@ -18,7 +18,7 @@ object StringCalculator {
     val parts = tail.split(head + "|\n")
     val integers = parts.map(parseInt)
     val negatives = integers.filter(_ < 0)
-    if (negatives.isEmpty) integers.sum
+    if (negatives.isEmpty) integers.filterNot(_ > 1000).sum
     else error("negatives not allowed: " + negatives.mkString(","))
   }
 

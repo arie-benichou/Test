@@ -53,6 +53,14 @@ class StringCalculatorTest extends FunSpec {
       }
     }
 
+    it("should ignore numbers greater than 1000") {
+      assert(StringCalculator.add("1,1000") === 1001)
+      assert(StringCalculator.add("1,1001") === 1)
+      assert(StringCalculator.add("2,1001") === 2)
+      assert(StringCalculator.add("2,1001,1002") === 2)
+      assert(StringCalculator.add("1001") === 0)
+    }
+
   }
 
 }
